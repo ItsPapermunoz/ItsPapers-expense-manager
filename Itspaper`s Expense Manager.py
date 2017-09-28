@@ -17,6 +17,15 @@ def date():
 
 def load():
     try:
-        expense = pikle.load(open("Expense.data", "rb"))
-        dates = pikle.load(open("Dates.data", "rb"))
+        expense = pkl.load(open("Expense.data", "rb"))
+        dates = pkl.load(open("Dates.data", "rb"))
+    except FileNotFoundError:
+        pkl.dump(expense, open("Expense.data", "wb"))
+        pkl.dump(dates, open("Dates.data", "wb"))
+    finally:
         return expense, dates
+
+
+def expense_entry():
+    spent = int(input("How much did you spend today? "))
+    today = date()
