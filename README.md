@@ -1,1 +1,1 @@
-# ItsPapers expense manager
+# ItsPaper's expense manager
